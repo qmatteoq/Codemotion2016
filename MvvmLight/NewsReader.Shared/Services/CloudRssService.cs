@@ -9,10 +9,11 @@ namespace NewsReader.Shared.Services
 {
     public class CloudRssService : IRssService
     {
-        public async Task<List<FeedItem>> GetNews(string url)
+        public async Task<List<FeedItem>> GetNews()
         {
             HttpClient client = new HttpClient();
-            string result = await client.GetStringAsync(new Uri("http://newsapicodemotion2016.azurewebsites.net/api/news"));
+            string result =
+                await client.GetStringAsync(new Uri("http://newsapicodemotion2016.azurewebsites.net/api/news"));
             List<FeedItem> items = JsonConvert.DeserializeObject<List<FeedItem>>(result);
             return items;
         }

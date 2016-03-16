@@ -38,7 +38,7 @@ namespace NewsReader.Shared.ViewModels
                 {
                     _loadCommand = new RelayCommand(async () =>
                     {
-                        List<FeedItem> items = await _rssService.GetNews("http://blog.qmatteoq.com/rss");
+                        List<FeedItem> items = await _rssService.GetNews();
                         foreach (FeedItem feedItem in items)
                         {
                             News.Add(feedItem);

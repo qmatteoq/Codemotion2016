@@ -10,10 +10,10 @@ namespace NewsReader.Shared.Services
 {
     public class RssService : IRssService
     {
-        public async Task<List<FeedItem>> GetNews(string url)
+        public async Task<List<FeedItem>> GetNews()
         {
             HttpClient client = new HttpClient();
-            string result = await client.GetStringAsync(url);
+            string result = await client.GetStringAsync("http://blog.qmatteoq.com/rss");
             var xdoc = XDocument.Parse(result);
             return (from item in xdoc.Descendants("item")
                     select new FeedItem

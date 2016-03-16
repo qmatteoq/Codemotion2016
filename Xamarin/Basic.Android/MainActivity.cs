@@ -20,8 +20,8 @@ namespace Basic.Android
         public Button SayHelloButton
             => _sayHelloButton ?? (_sayHelloButton = this.FindViewById<Button>(Resource.Id.SayHelloButton));
 
-        private EditText _editText;
-        public EditText EditText => _editText ?? (_editText = this.FindViewById<EditText>(Resource.Id.NameText));
+        private EditText _nameText;
+        public EditText NameText => _nameText ?? (_nameText = this.FindViewById<EditText>(Resource.Id.NameText));
 
         private TextView _resultText;
         public TextView ResultText => _resultText ?? (_resultText = this.FindViewById<TextView>(Resource.Id.ResultText));
@@ -33,7 +33,7 @@ namespace Basic.Android
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            _editTextBinding = this.SetBinding(() => ViewModel.Name, () => EditText.Text, BindingMode.TwoWay);
+            _editTextBinding = this.SetBinding(() => ViewModel.Name, () => NameText.Text, BindingMode.TwoWay);
             _resultTextBinding = this.SetBinding(() => ViewModel.Message, () => ResultText.Text);
             SayHelloButton.SetCommand("Click", ViewModel.SayHello);
         }

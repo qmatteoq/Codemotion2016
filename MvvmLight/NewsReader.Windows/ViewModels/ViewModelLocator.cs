@@ -22,7 +22,7 @@ namespace NewsReader.Windows.ViewModels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<IDialogService, DialogService>();
-            SimpleIoc.Default.Register<IRssService, RssService>();
+            SimpleIoc.Default.Register<IRssService, CloudRssService>();
             SimpleIoc.Default.Register<MainViewModel>();
         }
 

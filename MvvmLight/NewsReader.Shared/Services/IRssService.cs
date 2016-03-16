@@ -6,6 +6,6 @@ namespace NewsReader.Shared.Services
 {
     public interface IRssService
     {
-        Task<List<FeedItem>> GetNews(string url);
+        Task<List<FeedItem>> GetNews();
     }
 }

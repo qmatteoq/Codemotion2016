@@ -24,14 +24,8 @@ namespace BasicWithMvvm.ViewModels
 
         public string Message
         {
-            get
-            {
-                return _message;
-            }
-            set
-            {
-                Set(ref _message, value);
-            }
+            get { return _message; }
+            set { Set(ref _message, value); }
         }
 
         private RelayCommand _sayHello;
@@ -44,7 +38,7 @@ namespace BasicWithMvvm.ViewModels
                 {
                     _sayHello = new RelayCommand(() =>
                     {
-                        Message = string.Format("Hello {0}", Name);
+                        Message = $"Hello {Name}";
                     },
                     () => !string.IsNullOrEmpty(Name));
                 }

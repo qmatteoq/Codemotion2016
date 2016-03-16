@@ -11,7 +11,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Path=News, Mode=OneWay}"
+        <ListView ItemsSource="{Binding Path=News}"
                   commands:ItemClickCommand.Command="{Binding Path=ItemSelectedCommand}"
                   IsItemClickEnabled="True">
           
